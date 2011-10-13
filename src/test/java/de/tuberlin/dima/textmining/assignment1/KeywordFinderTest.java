@@ -17,9 +17,9 @@ public class KeywordFinderTest {
     String text = Resources.toString(Resources.getResource("assignment1.txt"), Charsets.UTF_8);
 
     KeywordFinder finder = new KeywordFinder();
-    List<String> keywords = finder.keywords(text, 5);
+    List<String> keywords = finder.keywords(text, 10);
 
-    assertEquals(5, keywords.size());
+    assertEquals(10, keywords.size());
 
     for (int n = 0; n < keywords.size(); n++) {
       System.out.println(n + ": " + keywords.get(n));
