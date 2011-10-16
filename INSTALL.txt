@@ -108,3 +108,8 @@ HowTo hand your code in
 - Don't forget to check that the file has some content and has everything you
 	want to submit inside
 
+Tipps
+-----
+
+If you don't like the new Ubuntu look and feel use
+$ sudo apt-get install gnome-session-fallback
