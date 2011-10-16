@@ -1,0 +1,110 @@
+Installation
+============
+
+This is the installation document for the DIMA applied-textmining course offered
+ in the winter semester (2011-2012) at the TU-Berlin.
+
+Only Linux installations will be discussed. For simplicity Ubuntu 11-10 is used, 
+but of course ever Student is free to choose which distribution he feels at 
+home with. 
+
+Ubuntu can be downloaded at http://www.ubuntu.com/download
+
+If you are using Windows you can install Ubuntu in a Virtual Machine like
+https://www.virtualbox.org/
+
+Mac users will be able to do everything on the shell but commands will be 
+different. Please feel free to send me what is needed so I can add it here.
+
+Note: You need a working internet connection all the time (ping is your friend)
+
+Setting up git
+--------------
+
+Git is a version control system (VCS). All the code that is written should be 
+checked into git. If you want to do it the expert way then you will create a github 
+account and fork our tree. If you have never used a VCS before I would advise 
+just to use git clone and modify your code there and then send us a patch.
+This will be described below. This course is not aimed at making you experts in
+git, so KISS.
+
+First we will need git. 
+
+- Open a shell (Dash home -> "terminal")
+- root yourself ($ sudo su)
+- Set up git (# apt-get install git-all)
+- Confirm with "Y" and see all the packages being installed. 
+- Now we can test if git works (Ctr-Shift T will open a new shell)
+	
+	$ git clone https://github.com/dimalabs/applied-textmining
+	
+	This should start copying the applied-textmining folder into the current
+	directory
+	
+Setting up Eclipse
+------------------
+
+Eclipse is probably the most used Java editor around. 
+
+- Open your root shell again ($ whoami)
+- # apt-get install eclipse eclipse-jdt
+	will get you most of the stuff you will need. And it will take some time
+	
+- Try using eclipse for a minute or two, it needs some time to get used to
+
+Setting up Maven
+----------------
+
+If you have programmed before you are sure to have used Make at some stage. For
+this project we are going to use Maven.
+
+- # apt-get install maven2
+
+is all you need to do that
+
+Setting up Maven with Eclipse
+-----------------------------
+
+If you want to use maven with eclipse we advise to install the maven eclipse
+plugin called m2e. Which can be found under www.eclipse.org/m2e/
+There is also a little introduction video which you can watch :)
+
+- Start eclipse
+- Help -> Install new Software
+- In the Work With field: http://download.eclipse.org/technology/m2e/releases 
+- Press Add
+- Go to the Available Software sites and scroll to the right. Then be sure to
+	enable every repository (If you get some dependency error you have forgotten
+	to do this)
+- Then select m2e - Maven integration for Eclipse and press Next
+- You will be asked to restart eclipse after everything worked out ok
+
+Under File -> New -> Project you should now see Maven
+
+Fitting it all together
+-----------------------
+
+Now you have all the modules you will need to start programming
+
+- Open a shell
+- Go to the directory you want save your code in
+	Tip: Use dropbox or ubuntu one so you don't loose anything
+		# apt-get install nautilus-dropbox
+
+- $ git clone https://github.com/dimalabs/applied-textmining
+- Open eclipse
+- File -> Import -> Existing Maven Project
+- Select the Folder you cloned into
+- This should then import everything
+
+
+HowTo hand your code in
+-----------------------
+- Navigate to the folder with all your code
+- Git add and commit everything
+- Then create a patch
+- $ git format-patch master --stdout > YOURNAME.patch
+- Upload the resulting Patch to ISIS
+- Don't forget to check that the file has some content and has everything you
+	want to submit inside
+
