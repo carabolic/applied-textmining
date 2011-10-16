@@ -113,3 +113,8 @@ Tipps
 
 If you don't like the new Ubuntu look and feel use
 $ sudo apt-get install gnome-session-fallback
+
+If you want everything in one install
+# apt-get install git-all eclipse eclipse-jdt maven2 gnome-session-fallback
+Don't forget the maven eclipse plugin
+
