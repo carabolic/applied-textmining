@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * if you encounter the problem the starwars.txt cannot be found, you need to build the project
+ * if you encounter the problem that starwars.txt cannot be found, you need to build the project
  * once on the commandline: mvn clean install
  * */
 public class KeywordFinderTest {
