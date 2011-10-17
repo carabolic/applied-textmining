@@ -40,6 +40,10 @@ First we will need git.
 	
 	This should start copying the applied-textmining folder into the current
 	directory
+
+NOTE: Please be sure to update your git everytime we publish something with:
+
+$ git pull
 	
 Setting up Eclipse
 ------------------
@@ -103,7 +107,7 @@ HowTo hand your code in
 - Navigate to the folder with all your code
 - Git add and commit everything
 - Then create a patch
-- $ git format-patch master --stdout > YOURNAME.patch
+- $ git format-patch origin/master --stdout > YOURNAME.patch
 - Upload the resulting Patch to ISIS
 - Don't forget to check that the file has some content and has everything you
 	want to submit inside
