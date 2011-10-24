@@ -27,7 +27,7 @@ public class LanguageModelTest {
 
     List<List<String>> sentences = Arrays.asList(
         Arrays.asList("I", "am", "happy"),
-        Arrays.asList("Englands", "sucks", "ass"));
+        Arrays.asList("England", "sucks", "ass"));
 
 
     double logProbability = 0.0;
