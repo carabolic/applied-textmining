@@ -2,15 +2,12 @@ package de.tuberlin.dima.textmining.assignment2;
 
 import com.google.common.base.Charsets;
 import com.google.common.base.Joiner;
-import com.google.common.base.Strings;
-import com.google.common.collect.Iterables;
 import com.google.common.io.Resources;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
