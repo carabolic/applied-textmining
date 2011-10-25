@@ -32,11 +32,6 @@
   </profiles>
 
   <dependencies>
-		<dependency>
-			<groupId>com.aliasi</groupId>
-			<artifactId>lingpipe</artifactId>
-			<version>4.0.1</version>
-		</dependency>
      <dependency>
         <groupId>com.googlecode.matrix-toolkits-java</groupId>
         <artifactId>mtj</artifactId>

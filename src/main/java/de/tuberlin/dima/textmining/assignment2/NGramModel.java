@@ -1,39 +1,40 @@
 package de.tuberlin.dima.textmining.assignment2;
 
+import com.google.common.collect.Lists;
+
 import java.util.Collection;
 import java.util.List;
 
-/**
-
- */
 public class NGramModel implements LanguageModel {
-    @Override
-    public void train(Collection<List<String>> corpus) {
-        //TODO: INSERT CODE HERE
-    }
 
-    @Override
-    public double getWordProbability(List<String> sentence, int index) {
+  @Override
+  public void train(Collection<List<String>> corpus) {
+    //TODO: INSERT CODE HERE
+  }
 
-        //TODO: INSERT CODE HERE
+  @Override
+  public double getWordProbability(List<String> sentence, int index) {
 
-        return 0;
-    }
+    //TODO: INSERT CODE HERE
 
-    @Override
-    public double sentenceLogProbability(List<String> sentence) {
+    return 0;
+  }
 
-        //TODO: INSERT CODE HERE
+  @Override
+  public double sentenceLogProbability(List<String> sentence) {
 
-        return 0;
-    }
+    //TODO: INSERT CODE HERE
 
-    @Override
-    public Iterable<String> generateSentence() {
+    return 0;
+  }
 
-        //TODO: INSERT CODE HERE
+  @Override
+  public Iterable<String> generateSentence() {
+    List<String> sentence = Lists.newArrayList();
 
-        return null;
-    }
+    //TODO: INSERT CODE HERE
+
+    return sentence;
+  }
 
 }
