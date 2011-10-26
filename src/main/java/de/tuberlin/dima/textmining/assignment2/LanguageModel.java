@@ -1,29 +1,49 @@
 package de.tuberlin.dima.textmining.assignment2;
 
-import com.google.common.collect.Lists;
-
+import java.util.Collection;
 import java.util.List;
 
-public class LanguageModel {
+/**
+ * In this class you should implement your language model.  *
+ */
 
-  public void train(String corpus) {
+public interface  LanguageModel {
 
-    //TODO INSERT CODE HERE
-  }
+    /**
+     * This function takes the provided training corpus and estimates the model probabilities by processing it.
+     *
+     * @param corpus
+     */
+    void train(Collection<List<String>> corpus);
 
-  public double sentenceProbability(Iterable<String> sentence) {
+     /**
+     * computes the probability of an individual word in a sentence at position i
+     *
+     * @param sentence
+     * @param index
+     * @return
+     */
+    double getWordProbability(List<String> sentence, int index);
 
-    //TODO INSERT CODE HERE
 
-    return 0;
-  }
+    /**
+     * This function returns the probability of a sentence as scored by the language model
+     *
+     * e.g. P(I am here) = P(I|<s>)*P(am|I)*P(here|am)P(</s>|here)
+     *
+      * @param sentence
+     * @return
+     */
+    double sentenceLogProbability(List<String> sentence);
 
-  public Iterable<String> generateSentence() {
 
-    List<String> sentence = Lists.newArrayList();
 
-    //TODO INSERT CODE HERE
-    return sentence;
-  }
+    /**
+     * This function implements the 'shanon game'. A sentence is assembled by randomly sampling from the language model
+     * until the stop token has been sampled.
+     *
+      * @return
+     */
+    Iterable<String> generateSentence();
 
 }
