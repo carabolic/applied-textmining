@@ -32,6 +32,11 @@
   </profiles>
 
   <dependencies>
+     <dependency>
+        <groupId>com.googlecode.matrix-toolkits-java</groupId>
+        <artifactId>mtj</artifactId>
+        <version>0.9.14</version>
+    </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -54,6 +59,11 @@
       <artifactId>lucene-core</artifactId>
       <version>3.3.0</version>
     </dependency>
+      <dependency>
+          <groupId>org.apache.lucene</groupId>
+          <artifactId>lucene-analyzers</artifactId>
+          <version>3.3.0</version>
+      </dependency>
   </dependencies>
 
   <build>
