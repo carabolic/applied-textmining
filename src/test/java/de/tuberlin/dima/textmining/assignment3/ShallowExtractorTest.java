@@ -29,7 +29,7 @@ public class ShallowExtractorTest {
 		Scanner scan;
 		try {
 			scan = new Scanner(new File(
-					"src/test/resources/assignment3/treebank-parsed"));
+					"src/test/resources/assignment3/sentences-json"));
 
 			while (scan.hasNextLine()) {
 
@@ -65,7 +65,7 @@ public class ShallowExtractorTest {
 		 * first get sentences from file
 		 */
 		Vector<ShallowSentence> sentences = this.getSentencesFromFile();
-
+				
 		/*
 		 * TODO: make this function solve the problem
 		 */
