@@ -1,7 +1,9 @@
 package de.tuberlin.dima.textmining.assignment3;
 
-import java.util.Vector;
+import java.util.Iterator;
+import java.util.List;
 
+import com.google.common.collect.Lists;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -9,19 +11,16 @@ import org.json.JSONObject;
 /**
  * The Class ShallowSentence is a shallow tagged sentence consisting of a Vector of ShallowToken.
  */
-public class ShallowSentence extends Vector<ShallowToken> {
+public class ShallowSentence implements Iterable<ShallowToken> {
 
+  private final List<ShallowToken> tokens;
 	/**
 	 * Instantiates a new shallow sentence given a vector of ShallowToken.
 	 *
 	 * @param tokens the tokens
 	 */
-	public ShallowSentence(Vector<ShallowToken> tokens) {
-
-		for (ShallowToken token : tokens) {
-			this.add(token);
-		}
-
+	public ShallowSentence(Iterable<ShallowToken> tokens) {
+    this.tokens = Lists.newArrayList(tokens);
 	}
 
 	/**
@@ -31,24 +30,24 @@ public class ShallowSentence extends Vector<ShallowToken> {
 	 */
 	public ShallowSentence(JSONObject sentenceJson) {
 
+    this.tokens = Lists.newArrayList();
+
 		try {
 			JSONArray instances = sentenceJson.getJSONArray("tokens");
 
 			for (int c = 0; c < instances.length(); c++) {
 
-				String lemma = ((JSONObject) instances.get(c))
-						.getString("lemma");
+				String lemma = ((JSONObject) instances.get(c)).getString("lemma");
 				String text = ((JSONObject) instances.get(c)).getString("text");
 				String tag = ((JSONObject) instances.get(c)).getString("tag");
 
 				ShallowToken token = new ShallowToken(text, tag, lemma);
 
-				this.add(token);
+				tokens.add(token);
 			}
 
 		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new RuntimeException(e);
 		}
 
 	}
@@ -70,11 +69,14 @@ public class ShallowSentence extends Vector<ShallowToken> {
 		try {
 			job.put("tokens", ja);
 		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new RuntimeException(e);
 		}
 
 		return job.toString();
 	}
 
+  @Override
+  public Iterator<ShallowToken> iterator() {
+    return tokens.iterator();
+  }
 }
