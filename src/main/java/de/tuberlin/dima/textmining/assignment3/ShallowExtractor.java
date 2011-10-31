@@ -1,11 +1,5 @@
 package de.tuberlin.dima.textmining.assignment3;
 
-import java.util.List;
-import java.util.Vector;
-
-/**
- * The Class ShallowExtractor.
- */
 public class ShallowExtractor {
 
 	/**
@@ -15,7 +9,7 @@ public class ShallowExtractor {
 	 *            the sentences
 	 * @return the list
 	 */
-	public List<SimpleRelation> findQuotes(Vector<ShallowSentence> sentences) {
+	public Iterable<SimpleRelation> findQuotes(Iterable<ShallowSentence> sentences) {
 
 		return null;
 	}
@@ -27,7 +21,7 @@ public class ShallowExtractor {
 	 *            the sentences
 	 * @return the list
 	 */
-	public List<SimpleRelation> findApposition(Vector<ShallowSentence> sentences) {
+	public Iterable<SimpleRelation> findApposition(Iterable<ShallowSentence> sentences) {
 
 		return null;
 

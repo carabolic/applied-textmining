@@ -2,17 +2,14 @@ package de.tuberlin.dima.textmining.assignment3;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.util.List;
 import java.util.Scanner;
-import java.util.Vector;
 
+import com.google.common.collect.Lists;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.Test;
 
-/**
- * The Class ShallowExtractorTest.
- */
 public class ShallowExtractorTest {
 
 	ShallowExtractor extractor = new ShallowExtractor();
@@ -22,37 +19,27 @@ public class ShallowExtractorTest {
 	 * 
 	 * @return the sentences from file
 	 */
-	public Vector<ShallowSentence> getSentencesFromFile() {
+	public Iterable<ShallowSentence> getSentencesFromFile() {
 
-		Vector<ShallowSentence> sentences = new Vector<ShallowSentence>();
+		List<ShallowSentence> sentences = Lists.newArrayList();
 
 		Scanner scan;
 		try {
-			scan = new Scanner(new File(
-					"src/test/resources/assignment3/sentences-json"));
+			scan = new Scanner(new File("src/test/resources/assignment3/sentences-json"));
 
 			while (scan.hasNextLine()) {
-
 				try {
-
 					JSONObject job = new JSONObject(scan.nextLine());
-
 					ShallowSentence readSentence = new ShallowSentence(job);
-
 					sentences.add(readSentence);
-
 				} catch (JSONException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					throw new RuntimeException(e);
 				}
 			}
-
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new RuntimeException(e);
 		}
 		return sentences;
-
 	}
 
 	/**
@@ -64,7 +51,7 @@ public class ShallowExtractorTest {
 		/*
 		 * first get sentences from file
 		 */
-		Vector<ShallowSentence> sentences = this.getSentencesFromFile();
+		Iterable<ShallowSentence> sentences = this.getSentencesFromFile();
 				
 		/*
 		 * TODO: make this function solve the problem
@@ -80,7 +67,7 @@ public class ShallowExtractorTest {
 		/*
 		 * first get sentences from file
 		 */
-		Vector<ShallowSentence> sentences = this.getSentencesFromFile();
+		Iterable<ShallowSentence> sentences = this.getSentencesFromFile();
 
 		/*
 		 * TODO: make this function solve the problem

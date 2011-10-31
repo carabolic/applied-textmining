@@ -1,18 +1,15 @@
 package de.tuberlin.dima.textmining.assignment3;
 
-/**
- * The Class SimpleRelation.
- */
 public class SimpleRelation {
 
 	/** The subject. */
-	private String subject;
+	private final String subject;
 	
 	/** The predicate. */
-	private RelationType predicate;
+	private final RelationType predicate;
 	
 	/** The object. */
-	private String object;
+	private final String object;
 
 	/**
 	 * Instantiates a new simple relation.
@@ -27,30 +24,15 @@ public class SimpleRelation {
 		this.predicate = predicate;
 		this.object = object;
 	}
-	
-	/**
-	 * Gets the subject.
-	 *
-	 * @return the subject
-	 */
+
 	public String getSubject() {
 		return subject;
 	}
 
-	/**
-	 * Gets the predicate.
-	 *
-	 * @return the predicate
-	 */
 	public RelationType getPredicate() {
 		return predicate;
 	}
 
-	/**
-	 * Gets the object.
-	 *
-	 * @return the object
-	 */
 	public String getObject() {
 		return object;
 	}
