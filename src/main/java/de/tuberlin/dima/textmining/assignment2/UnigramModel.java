@@ -5,7 +5,6 @@ import com.google.common.collect.Lists;
 import edu.stanford.nlp.stats.ClassicCounter;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
@@ -25,7 +24,7 @@ public class UnigramModel implements LanguageModel {
   public void train(Collection<List<String>> corpus) {
       for (List<String> sentence : corpus) {
           List<String> stoppedSentence = Lists.newArrayList(sentence);
-          stoppedSentence.add("<stop>");
+          stoppedSentence.add(SENTENCE_END_TAG);
           for (String word : stoppedSentence) {
               unigramCounter.incrementCount(word);
           }
@@ -58,7 +57,7 @@ public class UnigramModel implements LanguageModel {
    */
   public double sentenceLogProbability(List<String> sentence) {
       List<String> mySentence = Lists.newArrayList(sentence);
-      mySentence.add("<stop>");
+      mySentence.add(SENTENCE_END_TAG);
       double probability = 0.0;
 
       for (int i = 0; i < mySentence.size(); i++) {
@@ -89,7 +88,7 @@ public class UnigramModel implements LanguageModel {
   public Iterable<String> generateSentence() {
     List<String> sentence = new ArrayList<String>();
     String word = generateWord();
-    while (!word.equals("<stop>")) {
+    while (!word.equals(SENTENCE_END_TAG)) {
       sentence.add(word);
       word = generateWord();
     }

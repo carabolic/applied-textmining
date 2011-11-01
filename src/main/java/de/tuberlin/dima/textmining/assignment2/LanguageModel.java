@@ -9,6 +9,9 @@ import java.util.List;
 
 public interface  LanguageModel {
 
+	static String SENTENCE_START_TAG = "<s>";
+	static String SENTENCE_END_TAG = "</s>";
+
     /**
      * This function takes the provided training corpus and estimates the model probabilities by processing it.
      *
