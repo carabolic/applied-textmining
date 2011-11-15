@@ -75,5 +75,9 @@ public class SimpleRelation {
 	public String getObject() {
 		return object;
 	}
+	
+	public String toString() {
+		return "Subject: " + this.subject + " Predicate: " + this.predicate + " Object: " + this.object;
+	}
 
 }
