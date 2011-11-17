@@ -55,7 +55,7 @@ public class TopicClassifierTest extends TestCase{
         endTime = System.nanoTime();
         double duration = ((double)(endTime - startTime)) * Math.pow(10,-9);
 
-        assertTrue("The accuracy of your classifier is not sufficient. Yours achieved " + cv_accuracy * 100 + " % accuracy, but should be at least 50%!", cv_accuracy >= 50);
+        assertTrue("The accuracy of your classifier is not sufficient. Yours achieved " + cv_accuracy * 100 + " % accuracy, but should be at least 50%!", cv_accuracy >= 0.5);
         System.out.println("Your topic classifier achieved an accuracy of " + cv_accuracy * 100 + " % with " + CROSSVALIDATON_NUM_FOLDS + " fold cross-validation in  " + duration + " s.");
     }
 
