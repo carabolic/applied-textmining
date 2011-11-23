@@ -8,6 +8,18 @@
 	<artifactId>textmining</artifactId>
 	<version>1.0</version>
 
+  <repositories>
+    <repository>
+			<id>stavish-public-repository</id>
+			<name>Publicly available Maven 2 repository by Todd Stavish</name>
+			<url>http://www.stavi.sh/repository/maven2/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+  </repositories>
+
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -72,6 +84,21 @@
 			<groupId>edu.stanford.nlp</groupId>
 			<artifactId>stanford-corenlp</artifactId>
 			<version>1.2.0</version>
+		</dependency>
+    <dependency>
+			<groupId>org.rednoise</groupId>
+			<artifactId>RiTaWN</artifactId>
+			<version>024</version>
+		</dependency>
+		<dependency>
+			<groupId>org.rednoise</groupId>
+			<artifactId>supportWN</artifactId>
+			<version>024</version>
+		</dependency>
+		<dependency>
+			<groupId>org.processing</groupId>
+			<artifactId>core</artifactId>
+			<version>1.0</version>
 		</dependency>
 	</dependencies>
 
