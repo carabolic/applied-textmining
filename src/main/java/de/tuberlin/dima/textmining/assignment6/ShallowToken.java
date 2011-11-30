@@ -1,18 +1,14 @@
-package de.tuberlin.dima.textmining.assignment3;
+package de.tuberlin.dima.textmining.assignment6;
 
 import java.io.Serializable;
-
-import edu.stanford.nlp.io.RuntimeIOException;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import edu.stanford.nlp.ling.HasWord;
 
 /**
  * The Class ShallowToken hold a shallow parsed token consisting of the token
  * text, the POS tag and the lemma.
  */
-public class ShallowToken implements Serializable, HasWord {
+public class ShallowToken implements Serializable {
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
@@ -25,8 +21,6 @@ public class ShallowToken implements Serializable, HasWord {
 
 	/** The lemma. */
 	private String lemma;
-	
-	private String ner;
 
 	/**
 	 * Instantiates a new token with all shallow information. Use this
@@ -44,7 +38,6 @@ public class ShallowToken implements Serializable, HasWord {
 		this.text = text;
 		this.tag = tag;
 		this.lemma = lemma;
-		this.ner = null;
 	}
 
 	/**
@@ -60,7 +53,6 @@ public class ShallowToken implements Serializable, HasWord {
 		this.text = text;
 		this.tag = tag;
 		this.lemma = null;
-		this.ner = null;
 	}
 
 	/**
@@ -74,7 +66,6 @@ public class ShallowToken implements Serializable, HasWord {
 		this.text = text;
 		this.tag = null;
 		this.lemma = null;
-		this.ner = null;
 	}
 
 	/*
@@ -113,7 +104,8 @@ public class ShallowToken implements Serializable, HasWord {
 			job.put("tag", tag);
 			job.put("lemma", lemma);
 		} catch (JSONException e) {
-			throw new RuntimeException(e);
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
 		return job;
@@ -174,24 +166,6 @@ public class ShallowToken implements Serializable, HasWord {
 	 */
 	public void setLemma(String lemma) {
 		this.lemma = lemma;
-	}
-
-	@Override
-	public String word() {
-		return this.text;
-	}
-
-	@Override
-	public void setWord(String word) {
-		this.setText(word);		
-	}
-	
-	public String ner() {
-		return this.ner;
-	}
-	
-	public void setNer(String ner) {
-		this.ner = ner;
 	}
 
 }
